@@ -66,14 +66,18 @@ GameOver.prototype = {
 	
 		let specialMessage = "Reach 500 for Special Message \n Press SPACE for a new game";
 	
-		if (score >= 2000) {
-			specialMessage = "Amazing! You've reached 2000! Keep going!";
-		} else if(score >= 1500){
+		if(score >= 1500){
 			specialMessage = "Oh no! lets have One last push to 2000";
-		} else if (score >= 1000) {
+		} else if (score >= 200) {
 			specialMessage = "Incredible! 1000 points! Can you reach 1500?";
-		} else if (score >= 500) {
+			setTimeout(() => {
+				window.open("special.html", "_blank");
+			}, 1000)
+		} else if (score >= 100) {
 			specialMessage = "Fooled you next milestone is 1000";
+			setTimeout(() => {
+				window.open("special1.html", "_blank");
+			}, 1000)
 		}
 	
 		this.restart = this.game.add.text(
